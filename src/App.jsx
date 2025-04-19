@@ -10,8 +10,7 @@ import Header from './Components/Header'
 
 export default function App() {
   return (
-    <BrowserRouter>
-    
+    <BrowserRouter> 
     <Header></Header>
     <Routes>
       <Route path= "/" element={<Home />}></Route>
