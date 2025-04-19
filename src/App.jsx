@@ -11,7 +11,7 @@ import Header from './Components/Header'
 export default function App() {
   return (
     <BrowserRouter>
-    <p>hello</p>
+    
     <Header></Header>
     <Routes>
       <Route path= "/" element={<Home />}></Route>
