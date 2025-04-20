@@ -18,13 +18,14 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 
+mongoose.connect(process.env.MONGO)
+    .then(() => {
+        console.log('Database is connected');
+    })
+    .catch((err) => {
+        console.error('Error connecting to MongoDB:', err.message);
+    });
 
-
-mongoose.connect(process.env.MONGO).then(()=>{
-    console.log('database is connected.')
-}).catch((err)=>{
-    console.log(err);
-})
 
 const app = express();
 app.use(express.json());

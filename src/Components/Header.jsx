@@ -71,7 +71,7 @@ export default function Header() {
         </Button>
         <Link to="/sign-in">
           <Button
-            className=" px-4 py-2 text-lg bg-gradient-to-r from-purple-500 to-blue-500"
+            className="px-4 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg text-lg font-semibold transition duration-200 hover:opacity-90"
           >
             Sign In
           </Button>
