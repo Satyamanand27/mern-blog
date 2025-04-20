@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "nodemon api/index.js",
+    "dev": "vite",
     "start": "node api/index.js",
     "build": "vite build",
     "lint": "eslint .",
