@@ -19,6 +19,7 @@
     "express": "^5.1.0",
     "flowbite": "^3.1.2",
     "flowbite-react": "^0.11.7",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.2",
     "nodemon": "^3.1.9",
     "postcss": "^8.5.3",
