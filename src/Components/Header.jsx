@@ -17,7 +17,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { CiSearch } from "react-icons/ci";
 
-import { FaMoon } from "react-icons/fa";
+// import { FaMoon } from "react-icons/fa";
 
 
 export default function Header() {
@@ -74,13 +74,13 @@ export default function Header() {
         </span>
       </Button>
       <div className="flex gap-3 md:order-2">
-        <Button
+        {/* <Button
           className="w-12 h-10 hidden sm:inline border"
           color="white"
           pill
         >
           <FaMoon></FaMoon>
-        </Button>
+        </Button> */}
         {currentUser ? (
           <Dropdown
             arrowIcon={false}
