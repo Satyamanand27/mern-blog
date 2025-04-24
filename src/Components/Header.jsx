@@ -5,15 +5,27 @@ import {
   NavbarLink,
   NavbarCollapse,
   NavbarToggle,
+  Dropdown,
+  Avatar,
+  DropdownHeader,
+  DropdownItem,
+  DropdownDivider,
 } from "flowbite-react";
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { CiSearch } from "react-icons/ci";
+
 import { FaMoon } from "react-icons/fa";
+
 
 export default function Header() {
   const path = useLocation().pathname;
+  
+  const { currentUser } = useSelector((state) => state.user);
+  
+
   return (
     <Navbar className="border-b-2">
       {/* <Link
@@ -69,13 +81,34 @@ export default function Header() {
         >
           <FaMoon></FaMoon>
         </Button>
-        <Link to="/sign-in">
-          <Button
-            className="px-4 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg text-lg font-semibold transition duration-200 hover:opacity-90"
+        {currentUser ? (
+          <Dropdown
+            arrowIcon={false}
+            inline
+            label={
+              <Avatar alt='user' img={currentUser.profilePicture} rounded />
+            }
           >
-            Sign In
-          </Button>
-        </Link>
+            <DropdownHeader>
+              <span className='block text-sm'>@{currentUser.username}</span>
+              <span className='block text-sm font-medium truncate'>
+                {currentUser.email}
+              </span>
+            </DropdownHeader>
+            <Link to={'/dashboard?tab=profile'}>
+              <DropdownItem>Profile</DropdownItem>
+            </Link>
+            <DropdownDivider />
+            <DropdownItem>Sign out</DropdownItem>
+          </Dropdown>
+        ) : (
+          <Link to='/sign-in'>
+            <Button className="px-4 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg text-lg font-semibold transition duration-200 hover:opacity-90" outline>
+              Sign In
+            </Button>
+          </Link>
+        )}
+
         <NavbarToggle></NavbarToggle>
       </div>
 
